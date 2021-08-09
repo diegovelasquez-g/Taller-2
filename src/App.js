@@ -3,18 +3,18 @@ import './App.css';
 
 
 function App() {
-  const [unidad, setUnidad] = useState(0);
-  const [decena, setDecena] = useState(0);
-  const [centena, setCentena] = useState(0);
+  const [dolar, setDolar] = useState(0);
+  const [euro, setEuro] = useState(0);
+  const [bitcoin, setBitcoin] = useState(0);
 
 
   const [tipo, setTipo] = useState(1);
   const [total, setTotal] = useState(0);
 
   useEffect(() => {
-    setUnidad((total * tipo) * 1);
-    setDecena((total * tipo) * 0.85);
-    setCentena((total * tipo) * 0.000022);
+    setDolar((total * tipo) * 1);
+    setEuro((total * tipo) * 0.85);
+    setBitcoin((total * tipo) * 0.000022);
   }, [total, tipo]);
 
 
@@ -29,9 +29,9 @@ function App() {
     <div className="App">
       <h1>Convertidor de divisas</h1>
 
-      <p>Dólares: {unidad}</p>
-      <p>Euros: {decena}</p>
-      <p>Bitcoin: {centena}</p>
+      <p>Dólares: {dolar}</p>
+      <p>Euros: {euro}</p>
+      <p>Bitcoin: {bitcoin}</p>
 
       <hr />
 
